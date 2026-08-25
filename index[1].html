@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYVELLA — Premium Web3 Asset Collection</title>
+    <meta name="description" content="NYVELLA — 2,222 unique digital wizard assets.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body{font-family:'Plus Jakarta Sans',sans-serif;background:#030712;color:#f3f4f6}
+        .glass-panel{background:rgba(17,24,39,.6);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08)}
+        .glass-panel:hover{border-color:rgba(0,200,5,.4)}
+        .brand-gradient{background:linear-gradient(135deg,#00c805 0%,#00e676 50%,#10b981 100%)}
+        .brand-text{background:linear-gradient(135deg,#00c805 0%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+<header class="border-b border-gray-800/80 bg-gray-950/70 backdrop-blur-xl sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl brand-gradient flex items-center justify-center font-bold text-black shadow-lg shadow-emerald-500/20">N</div><span class="text-xl font-bold tracking-tight text-white">NYVELLA</span></div>
+    <nav class="hidden md:flex items-center gap-10 text-sm font-semibold text-gray-400"><a href="#about" class="hover:text-white transition">Overview</a><a href="#whitelist" class="hover:text-white transition">Whitelist</a></nav>
+    <a href="#whitelist" class="px-5 py-2.5 rounded-lg brand-gradient text-black font-bold text-sm shadow-md shadow-emerald-500/20 hover:opacity-95 transition">Apply for Priority Pass</a>
+  </div>
+</header>
+
+<section id="about" class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <div class="lg:col-span-7 space-y-8">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Official Launch • Robinhood L2 Ecosystem</div>
+    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">Next-Generation Digital Collectibles & <span class="brand-text">Utility Ecosystem</span></h1>
+    <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">NYVELLA is a curated collection of 2,222 unique digital wizard assets deployed on the Robinhood L2 chain. Built for collectors, innovators, and decentralized finance enthusiasts.</p>
+    <div class="grid grid-cols-3 gap-6 pt-4 border-t border-gray-800/80 max-w-xl">
+      <div><div class="text-2xl font-bold text-white">2,222</div><div class="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">Total Supply</div></div>
+      <div><div class="text-2xl font-bold text-emerald-400">Robinhood</div><div class="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">L2 Network</div></div>
+      <div><div class="text-2xl font-bold text-white">OpenSea</div><div class="text-xs font-medium text-gray-500 uppercase tracking-wider mt-1">Marketplace</div></div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 pt-4"><a href="#whitelist" class="px-8 py-3.5 rounded-xl brand-gradient text-black font-bold text-center shadow-lg shadow-emerald-500/20 hover:opacity-95 transition">Register for Whitelist Access</a></div>
+  </div>
+  <div class="lg:col-span-5 flex justify-center"><div class="glass-panel p-4 rounded-3xl w-full max-w-md shadow-2xl border-emerald-500/20"><div class="relative aspect-square rounded-2xl overflow-hidden border border-gray-800"><img src="https://i.imgur.com/fkbOMHh.gif" alt="NYVELLA Asset Preview" class="w-full h-full object-cover"></div></div></div>
+</section>
+
+<section id="whitelist" class="border-t border-gray-800/80 py-24">
+  <div class="max-w-xl mx-auto px-6">
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6">
+      <div class="text-center space-y-2"><h2 class="text-2xl sm:text-3xl font-extrabold text-white">Whitelist Application</h2><p class="text-gray-400 text-xs">Submit your credentials to secure early mint allocation.</p></div>
+      <form id="whitelistForm" class="space-y-4">
+        <div><label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Social Handle (X / Twitter)</label><input id="handle" type="text" required placeholder="@your_handle" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-emerald-500 transition"></div>
+        <div><label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">EVM Wallet Address (Robinhood)</label><input id="wallet" type="text" required placeholder="0x..." pattern="^0x[a-fA-F0-9]{40}$" title="Enter a valid EVM address (0x followed by 40 hexadecimal characters)" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-emerald-500 transition font-mono"></div>
+        <button id="submitBtn" type="submit" class="w-full py-3.5 rounded-xl brand-gradient text-black font-bold text-sm shadow-lg shadow-emerald-500/20 hover:opacity-95 transition mt-2">Submit Whitelist Application</button>
+        <p id="formMessage" class="text-sm text-center hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-gray-800/80 py-8 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+    <p>&copy; 2026 NYVELLA Asset Collection. All rights reserved.</p>
+    <div class="flex items-center gap-6"><a href="https://x.com/NYVELLA_ETH" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition flex items-center gap-2"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Follow on X (@NYVELLA_ETH)</span></a><span>•</span><p>Deployed on Robinhood L2 • Listed on OpenSea</p></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('whitelistForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMessage');
+  btn.disabled = true; btn.textContent = 'Submitting...';
+  msg.className = 'text-sm text-center';
+  msg.textContent = '';
+  try {
+    const res = await fetch('/api/whitelist', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        handle: document.getElementById('handle').value.trim(),
+        wallet: document.getElementById('wallet').value.trim()
+      })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Submission failed');
+    msg.className = 'text-sm text-center text-emerald-400';
+    msg.textContent = 'Application received. Welcome to NYVELLA.';
+    e.target.reset();
+  } catch(err) {
+    msg.className = 'text-sm text-center text-red-400';
+    msg.textContent = err.message || 'Something went wrong. Please try again.';
+  } finally {
+    btn.disabled = false; btn.textContent = 'Submit Whitelist Application';
+  }
+});
+</script>
+</body>
+</html>
